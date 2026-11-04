@@ -1,3 +1,4 @@
+_G.LModdersPanel = [[
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/magnesiumv2/PromptR/refs/heads/main/main.lua.txt"))()
 
 -- 2. Cria a Janela Principal (Padrão VoidWare)
@@ -2360,3 +2361,5 @@ else
         Desc = "A pasta 'game.ReplicatedStorage.RE' não foi localizada no ambiente."
     })
 end
+return true
+]]
