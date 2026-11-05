@@ -2361,5 +2361,25 @@ else
         Desc = "A pasta 'game.ReplicatedStorage.RE' não foi localizada no ambiente."
     })
 end
+
+local Terms = Window:Tab({
+   Title = "Terms of Use",
+})
+
+Terms:Paragraph({
+   Title = "Use this panel responsibly, not to spoil the players' experience.",
+   Desc = "We protect the players; we must ensure their happiness.",
+})
+
+Terms:Paragraph({
+   Title = "Use the commands in the tab. Commandos to moderate the server against toxic players who are causing distress to other players.",
+   Desc = "Do not use the controls against innocent players.",
+})
+
+Terms:Paragraph({
+   Title = "The `:kick` command doesn't work, so use the DoS command in the Server tab, but choose the DoS command that best suits your server situation.",
+   Desc = *Do not use DoS for fun, but rather to disconnect players you need to, for example, people who sit in chairs or 'exploiter' scripters; have zero tolerance for them.",
+})
+
 return true
 ]]
