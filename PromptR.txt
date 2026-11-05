@@ -2378,7 +2378,17 @@ Terms:Paragraph({
 
 Terms:Paragraph({
    Title = "The `:kick` command doesn't work, so use the DoS command in the Server tab, but choose the DoS command that best suits your server situation.",
-   Desc = *Do not use DoS for fun, but rather to disconnect players you need to, for example, people who sit in chairs or 'exploiter' scripters; have zero tolerance for them.",
+   Desc = "Do not use DoS for fun, but rather to disconnect players you need to, for example, people who sit in chairs or 'exploiter' scripters; have zero tolerance for them.",
+})
+
+Terms:Paragraph({
+   Title = "Destroy online dating and warn that online dating is dangerous because people don't know that whoever is behind a screen may have malicious intent.",
+   Desc = "If the online dating site uses scripts, warn of the dangers of online dating before any interaction.",
+})
+
+Terms:Paragraph({
+   Title = "Warn those users of public exploits that they are in danger because someone could steal their cookies and access their account.",
+   Desc = "Script kiddies are often unaware that public exploits can steal their cookies and sell them illegally on the black market.",
 })
 
 return true
