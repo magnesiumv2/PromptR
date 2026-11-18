@@ -1,0 +1,36 @@
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/magnesiumv2/PromptR/refs/heads/main/main.lua.txt"))()
+local Window = WindUI:CreateWindow({
+    Title = "Anti-Line Team",
+    SubTitle = "Local moderation",
+    Icon = "",
+    Size = UDim2.fromOffset(550, 380),
+    Theme = "Dark"
+})
+
+local MainTab = Window:Tab({
+    Title = "?[1]",
+    Icon = ""
+})
+
+local file = MainTab:Section({
+   Title = "fails and Vulnerability",
+})
+
+file:Button({
+   Title = "Denial of Service [Layer 7]",
+Desc = "Disconnects and Comgestionament [No server Limit]",
+Callback = function()
+
+end
+})
+
+file:Dropdown({
+    Title = "Times/Spam limite option",
+    Desc = "Select the times for spam 'Flood Clickdetector'",
+    Value = {"100", "500", "1000", "3989", "LPFPR"}
+    Callback = function(Value)
+
+    end
+  })
+file:Button({
+    Title = "Flood Clickdetector",
