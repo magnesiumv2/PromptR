@@ -28,12 +28,25 @@ local ValueSelected = 500
 file:Dropdown({
     Title = "Times/Spam limite option",
     Desc = "Select the times for spam 'Flood Clickdetector'",
-    Values = {"100", "500", "1000", "3989", "LPFPR"},
+    Values = {"100", "500", "1000", "3989", "9999999999999999"},
     Value = "500",
     Callback = function(Value)
-
+ValueSelected = tonumber(Value)
     end
   })
 
+file:Dropdown({
+   Title = "Tool to Spam 'Flood Clickdetector'",
+   Desc = "Select the Tool for Spam and Duplicate",
+   Values = {"Bomb", "Gun"},
+   Value = "Bomb",
+   Callback = function(Tool)
+
+end
+})
+
 file:Button({
     Title = "Flood Clickdetector",
+   Desc = "Spam Clickdetector of the tools selected",
+   Callback = function()
+if 
