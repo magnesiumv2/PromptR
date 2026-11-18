@@ -7,8 +7,8 @@ local Window = WindUI:CreateWindow({
     Theme = "Dark"
 })
 
-local Bomb = game:GetService("Workspace").workspacecom.001CriminalWeapons.Bomb.Clickdetector
-local Gun =
+local Bomb = workspace.WorkspaceCom["001_CriminalWeapons"].GiveTools.Bomb.ClickDetector
+local Gun = workspace.WorkspaceCom["001_CriminalWeapons"].GiveTools.Sniper.ClickDetector
 
 local MainTab = Window:Tab({
     Title = "?[1]",
@@ -54,8 +54,17 @@ file:Button({
    Callback = function()
 if ToolSelected == "Bomb" then
 for m = 1, ValueSelected do
-Fireclickdetector(Bomb)
+fireclickdetector(Bomb)
 task.wait(0.20)
+end
+end
+elseif ToolSelected == "Gun" then
+for m = 1, ValueSelected do
+fireclickdetector(Gun)
+task.wait(0.20)
+end
+end
+end
 end
 end
 })
