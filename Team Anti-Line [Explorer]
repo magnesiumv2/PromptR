@@ -7,6 +7,9 @@ local Window = WindUI:CreateWindow({
     Theme = "Dark"
 })
 
+local Bomb = game:GetService("Workspace").workspacecom.001CriminalWeapons.Bomb.Clickdetector
+local Gun =
+
 local MainTab = Window:Tab({
     Title = "?[1]",
     Icon = ""
@@ -34,14 +37,14 @@ file:Dropdown({
 ValueSelected = tonumber(Value)
     end
   })
-
+local ToolSelected = Bomb
 file:Dropdown({
    Title = "Tool to Spam 'Flood Clickdetector'",
    Desc = "Select the Tool for Spam and Duplicate",
    Values = {"Bomb", "Gun"},
    Value = "Bomb",
    Callback = function(Tool)
-
+ToolSelected = tostring(Tool)
 end
 })
 
@@ -49,4 +52,10 @@ file:Button({
     Title = "Flood Clickdetector",
    Desc = "Spam Clickdetector of the tools selected",
    Callback = function()
-if 
+if ToolSelected == "Bomb" then
+for m = 1, ValueSelected do
+Fireclickdetector(Bomb)
+task.wait(0.20)
+end
+end
+})
