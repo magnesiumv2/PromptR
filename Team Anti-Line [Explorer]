@@ -20,8 +20,8 @@ local file = MainTab:Section({
 })
 
 file:Button({
-   Title = "Denial of Service [Layer 7]",
-Desc = "Disconnects and Comgestionament [No server Limit]",
+   Title = " ",
+Desc = " "
 Callback = function()
 
 end
