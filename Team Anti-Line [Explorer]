@@ -37,7 +37,7 @@ file:Dropdown({
 ValueSelected = tonumber(Value)
     end
   })
-local ToolSelected = Bomb
+local ToolSelected = "Bomb"
 file:Dropdown({
    Title = "Tool to Spam 'Flood Clickdetector'",
    Desc = "Select the Tool for Spam and Duplicate",
@@ -57,13 +57,11 @@ for m = 1, ValueSelected do
 fireclickdetector(Bomb)
 task.wait(0.20)
 end
-end
+
 elseif ToolSelected == "Gun" then
 for m = 1, ValueSelected do
 fireclickdetector(Gun)
 task.wait(0.20)
-end
-end
 end
 end
 end
