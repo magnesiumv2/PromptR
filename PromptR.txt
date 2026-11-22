@@ -2372,7 +2372,7 @@ Terms:Paragraph({
 })
 
 Terms:Paragraph({
-   Title = "se alguém te xingar ou tentar te insultar, não abra o chat, deixe o chat fechado e bloqueie a pessoa, quando você ver um insulto, ignore e lembre-se, você está utilizando o painel PromptR, o painel mais perigoso e brutal já criado",
+   Title = "se alguém te xingar ou tentar te insultar, não abra o chat, deixe o chat fechado e bloqueie a pessoa, quando você ver um insulto, ignore e lembre-se, você está utilizando o painel PromptR, o painel de falsa administração com a maior força bruta já criado. por isso, seja responsável e não prejudique os jogadores pacíficos",
 Desc = "e se você ir para o jogo de insultos do infantil, não responda e não ligue, denuncie por 'bullyng' e 'palavrões', seja frio",
 })
 
