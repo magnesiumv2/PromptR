@@ -2381,6 +2381,22 @@ Terms:Button({
    Desc = "vai até os Bastidores, você fica invisível, quem ir até você vai morrer em loop na maioria",
    Callback = function()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999999999999999999999999999, -100, -99999999999999999999999999)
+
+wait(0.5)
+
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+})
+
+Terms:Button({
+   Title = "Voltar dos Bastidores",
+   Desc = "volta dos Bastidores e você reaparece",
+   Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100, 0)
+
+wait(1)
+
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored = false
 end
 })
 
