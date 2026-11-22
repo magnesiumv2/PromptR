@@ -2339,7 +2339,7 @@ if AlvoPath then
 
     -- 3. Exibe o resumo total em um parágrafo informativo
     Security:Paragraph({
-        Title = "🔍 Relatório de Varredura para reportar remotos expostos para a voldex (" .. tostring(totalContado) .. " encontrados)",
+        Title = "🔍 Relatório de Varredura para reportar remotos expostos para Não reportar para a voldex, e sim para explorar e criar mais funções(" .. tostring(totalContado) .. " encontrados)",
         Desc = "Lista consolidada de todas as portas de comunicação abertas no diretório RE."
     })
 
@@ -2367,28 +2367,13 @@ local Terms = Window:Tab({
 })
 
 Terms:Paragraph({
-   Title = "Use this panel responsibly, not to spoil the players' experience.",
-   Desc = "We protect the players; we must ensure their happiness.",
+   Title = "use este painel para como desejar, e de forma estratégica",
+   Desc = "estratégias: nunca discutir com imaturos e infantis no chat, aja nos bastidores e não deixe ninguém te ver.",
 })
 
 Terms:Paragraph({
-   Title = "Use the commands in the tab. Commandos to moderate the server against toxic players who are causing distress to other players.",
-   Desc = "Do not use the controls against innocent players.",
-})
-
-Terms:Paragraph({
-   Title = "The `:kick` command doesn't work, so use the DoS command in the Server tab, but choose the DoS command that best suits your server situation.",
-   Desc = "Do not use DoS for fun, but rather to disconnect players you need to, for example, people who sit in chairs or 'exploiter' scripters; have zero tolerance for them.",
-})
-
-Terms:Paragraph({
-   Title = "Destroy online dating and warn that online dating is dangerous because people don't know that whoever is behind a screen may have malicious intent.",
-   Desc = "If the online dating site uses scripts, warn of the dangers of online dating before any interaction.",
-})
-
-Terms:Paragraph({
-   Title = "Warn those users of public exploits that they are in danger because someone could steal their cookies and access their account.",
-   Desc = "Script kiddies are often unaware that public exploits can steal their cookies and sell them illegally on the black market.",
+   Title = "se alguém te xingar ou tentar te insultar, não abra o chat, deixe o chat fechado e bloqueie a pessoa, quando você ver um insulto, ignore e lembre-se, você está utilizando o painel PromptR, o painel mais perigoso e brutal já criado",
+Desc = "e se você ir para o jogo de insultos do infantil, não responda e não ligue, denuncie por 'bullyng' e 'palavrões', seja frio",
 })
 
 return true
