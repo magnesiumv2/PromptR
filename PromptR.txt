@@ -2376,5 +2376,13 @@ Terms:Paragraph({
 Desc = "e se você ir para o jogo de insultos do infantil, não responda e não ligue, denuncie por 'bullyng' e 'palavrões', seja frio",
 })
 
+Terms:Button({
+   Title = "Ir aos Bastidores",
+   Desc = "vai até os Bastidores, você fica invisível, quem ir até você vai morrer em loop na maioria",
+   Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999999999999999999999999999, -100, -99999999999999999999999999)
+end
+})
+
 return true
 ]]
