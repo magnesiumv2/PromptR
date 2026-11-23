@@ -15,6 +15,10 @@ local MainTab = Window:Tab({
     Icon = "terminal"
 })
 
+wait(5)
+
+game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
+
 -- ============================================================
 -- 1. SELEÇÃO DE ALVO (TextBox Corrigida e Otimizada da WindUI)
 -- ============================================================
@@ -2417,6 +2421,8 @@ Variation:Button({
       Window:SetTitle("Brute PromptR")
       WindUI:SetTheme("Crimson")
 
+game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = true
+
       if not BruteMode then
          BruteMode = Instance.new("Sound")
          BruteMode.Name = "BrutalPromptR"
@@ -2435,6 +2441,8 @@ Variation:Button({
    Callback = function()
       Window:SetTitle("PromptR (Re-Continued)")
       WindUI:SetTheme("Dark")
+
+game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 
       if BruteMode then
          BruteMode:Destroy()
