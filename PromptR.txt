@@ -2417,8 +2417,6 @@ Variation:Button({
       Window:SetTitle("Brute PromptR")
       WindUI:SetTheme("Crimson")
 
-game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = true
-
       if not BruteMode then
          BruteMode = Instance.new("Sound")
          BruteMode.Name = "BrutalPromptR"
@@ -2428,6 +2426,7 @@ game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.Scrollin
          BruteMode.Looped = true
          BruteMode:Play()
       end
+game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = true
    end
 })
 
@@ -2438,15 +2437,14 @@ Variation:Button({
       Window:SetTitle("PromptR (Re-Continued)")
       WindUI:SetTheme("Dark")
 
-game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 
       if BruteMode then
          BruteMode:Destroy()
          BruteMode = nil
       end
+game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
    end
 })
-wait(4)
 game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 return true
 ]]
