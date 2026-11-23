@@ -15,8 +15,6 @@ local MainTab = Window:Tab({
     Icon = "terminal"
 })
 
-game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
-
 -- ============================================================
 -- 1. SELEÇÃO DE ALVO (TextBox Corrigida e Otimizada da WindUI)
 -- ============================================================
@@ -2448,6 +2446,7 @@ game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.Scrollin
       end
    end
 })
-
+wait(4)
+game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 return true
 ]]
