@@ -2412,8 +2412,27 @@ Variation:Button({
    Title = "Brutal Version (Brute PromptR)",
    Desc = "Para caso for fazer uma 'batalha de exploiters' para deixar o PromptR mais agressivo e Ignorante",
    Callback = function()
-Title = "Brute PromptR",
-Theme = "
+WindUI:Title = "Brute PromptR",
+WindUI:Theme = "Crimson",
+local BruteMode = Instance.new("Sound")
+BruteMode.Name = "BrutalPromptR",
+BruteMode.Parent = game:GetService("SoundService")
+BruteMode.SoundId = "rbxassetid://1844794472",
+BruteMode.Volume = 2
+BruteMode.Looped = true
+BruteMode.Play()
+end
+})
+
+Variation:Button({
+   Title = "Admin Version (PromptR)",
+   Desc = "Para caso quiser voltar ao painel original estratégico padrão",
+   Callback = function()
+WindUI:Title = "PromptR (Re-Continued)",
+WindUI.Theme = "Dark",
+BrutalMode:Destroy()
+end
+})
 
 return true
 ]]
