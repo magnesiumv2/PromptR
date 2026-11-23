@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/magnes
 -- 2. Cria a Janela Principal (Padrão VoidWare)
 local Window = WindUI:CreateWindow({
     Title = "PromptR",
-    SubTitle = "Local moderation",
+    Author = "TEEA - (Táticas Especiais e Estratégias Avançadas). Developed by PersistanceExploiter (Magnesium)",
     Icon = "terminal",
     Size = UDim2.fromOffset(550, 380),
     Theme = "Dark"
