@@ -2400,5 +2400,20 @@ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored = fal
 end
 })
 
+local Vers = Windows:Tab({ 
+   Title = "Version & Config",
+})
+
+local Variation = Vers:Section({
+   Title = "Version & Variation",
+})
+
+Variation:Button({
+   Title = "Brutal Version (Brute PromptR)",
+   Desc = "Para caso for fazer uma 'batalha de exploiters' para deixar o PromptR mais agressivo e Ignorante",
+   Callback = function()
+Title = "Brute PromptR",
+Theme = "
+
 return true
 ]]
