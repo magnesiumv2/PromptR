@@ -15,8 +15,6 @@ local MainTab = Window:Tab({
     Icon = "terminal"
 })
 
-wait(5)
-
 game:GetService("CoreGui").poguyu.liMkor.WindUI.Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 
 -- ============================================================
