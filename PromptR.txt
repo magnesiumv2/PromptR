@@ -2400,7 +2400,7 @@ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored = fal
 end
 })
 
-local Vers = Windows:Tab({ 
+local Vers = Window:Tab({ 
    Title = "Version & Config",
 })
 
@@ -2408,30 +2408,39 @@ local Variation = Vers:Section({
    Title = "Version & Variation",
 })
 
+local BruteMode
+
 Variation:Button({
    Title = "Brutal Version (Brute PromptR)",
    Desc = "Para caso for fazer uma 'batalha de exploiters' para deixar o PromptR mais agressivo e Ignorante",
    Callback = function()
-WindUI:Title = "Brute PromptR",
-WindUI:Theme = "Crimson",
-local BruteMode = Instance.new("Sound")
-BruteMode.Name = "BrutalPromptR",
-BruteMode.Parent = game:GetService("SoundService")
-BruteMode.SoundId = "rbxassetid://1844794472",
-BruteMode.Volume = 2
-BruteMode.Looped = true
-BruteMode.Play()
-end
+      Window:SetTitle("Brute PromptR")
+      WindUI:SetTheme("Crimson")
+
+      if not BruteMode then
+         BruteMode = Instance.new("Sound")
+         BruteMode.Name = "BrutalPromptR"
+         BruteMode.Parent = game:GetService("SoundService")
+         BruteMode.SoundId = "rbxassetid://1844794472"
+         BruteMode.Volume = 2
+         BruteMode.Looped = true
+         BruteMode:Play()
+      end
+   end
 })
 
 Variation:Button({
    Title = "Admin Version (PromptR)",
    Desc = "Para caso quiser voltar ao painel original estratégico padrão",
    Callback = function()
-WindUI:Title = "PromptR (Re-Continued)",
-WindUI.Theme = "Dark",
-BrutalMode:Destroy()
-end
+      Window:SetTitle("PromptR (Re-Continued)")
+      WindUI:SetTheme("Dark")
+
+      if BruteMode then
+         BruteMode:Destroy()
+         BruteMode = nil
+      end
+   end
 })
 
 return true
