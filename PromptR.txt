@@ -1984,6 +1984,49 @@ Inform:Button({
     end
 })
 
+-- 4. Botão para Buscar e Copiar o ID do Pacote de Animação
+Inform:Button({
+    Title = "Copiar ID do Pacote de Animação",
+    Desc = "Busca por iniciais e copia o ID do pacote de animação equipado",
+    Callback = function()
+        local targetName = _G.TargetPlayerName
+        if not targetName or targetName == "" then
+            WindUI:Notify({Title = "Erro", Content = "Digite as iniciais de um jogador!", Type = "Error"})
+            return
+        end
+        
+        local targetPlayer = encontrarJogadorPorIniciais(targetName)
+        
+        if targetPlayer and targetPlayer.Character then
+            local humanoid = targetPlayer.Character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                local ok, desc = pcall(function()
+                    return humanoid:GetAppliedDescription()
+                end)
+                
+                -- Lê o ID da animação principal do pacote (IdleAnimation é o padrão de referência dos pacotes)
+                if ok and desc then
+                    local pacoteId = desc.IdleAnimation
+                    if pacoteId and pacoteId > 0 then
+                        setclipboard(tostring(pacoteId))
+                        WindUI:Notify({
+                            Title = "Sucesso!",
+                            Content = "ID do Pacote de Animação de @" .. targetPlayer.Name .. " copiado!",
+                            Type = "Success"
+                        })
+                    else
+                        WindUI:Notify({Title = "Aviso", Content = "O jogador está usando a animação padrão da Roblox.", Type = "Warning"})
+                    end
+                else
+                    WindUI:Notify({Title = "Aviso", Content = "Não foi possível ler a descrição do avatar.", Type = "Warning"})
+                end
+            end
+        else
+            WindUI:Notify({Title = "Erro", Content = "Nenhum jogador encontrado com essas iniciais.", Type = "Error"})
+        end
+    end
+})
+
 local Server = Window:Tab({
    Title = "Server",
 })
