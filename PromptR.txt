@@ -2286,7 +2286,7 @@ Variation:Button({
          BruteMode = Instance.new("Sound")
          BruteMode.Name = "BrutalPromptR"
          BruteMode.Parent = game:GetService("SoundService")
-         BruteMode.SoundId = "rbxassetid://1845798536"
+         BruteMode.SoundId = "rbxassetid://1845819130"
          BruteMode.Volume = 2
          BruteMode.Looped = true
          BruteMode:Play()
