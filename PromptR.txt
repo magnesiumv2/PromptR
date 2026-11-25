@@ -2032,8 +2032,8 @@ local Server = Window:Tab({
 })
 
 Server:Button({
-    Title = "network stress due to requests",
-    Desc = "Causa um DoS, mas não derruba o servidor, apenas trava e pode causa erro de internet 277 para outros jogadores. Use isso contra scripters para e pessoas que se sentam em cadeiras que os comandos não conseguem afetar, Dica, controle o uso desta função para não fechar o Client, o Super DoS e este DoS são agressivos.",
+    Title = "Fatal .1",
+    Desc = "acione duas vezes rapidamente e espere 17 s",
     Callback = function()
         local player = game:GetService("Players").LocalPlayer
         if not player then return end
@@ -2050,9 +2050,9 @@ Server:Button({
 
         -- Notificação inicial de encerramento solicitada
         WindUI:Notify({ 
-            Title = "Shutdown", 
-            Content = "O Servidor esta sofrendo o gargalo de 500 requisições, vai travar e desconectar por internet alguns jogadores por causa da negação de serviço.", 
-            Duration = 5 
+            Title = "Brute Prompt's Server Denial of Service (Fatal .1)", 
+            Content = "Fatal .1: Use 2 vezes rapidamente e espere uma notificação sumir e acione denovo mais duas vezes até o seu objetivo for alcançado", 
+            Duration = 17 
         })
 
         task.spawn(function()
@@ -2109,8 +2109,8 @@ Server:Button({
 })
 
 Server:Button({
-    Title = "Super network stress due to requests",
-    Desc = "Causa um DoS, pode derrubar o servidor, trava e pode causa erro de internet 277 para outros jogadores de forma brutal, Regra, como esta versão é perigosa, é contra aqueles servidores que estão cheios de pessoas tóxicas e que não há mais oque fazer para tentar salva-lo.",
+    Title = "Fatal .2",
+    Desc = "acione uma vez",
     Callback = function()
         local player = game:GetService("Players").LocalPlayer
         if not player then return end
@@ -2127,8 +2127,8 @@ Server:Button({
 
         -- Notificação inicial de encerramento solicitada
         WindUI:Notify({ 
-            Title = "Super Shutdown", 
-            Content = "O Servidor esta sofrendo o gargalo de 900000 requisições, vai travar e desconectar por internet a maioria dos jogadores por causa da Super negação de serviço.", 
+            Title = "Brute PromptR's Denial of Service (Fatal .2)", 
+            Content = "Fatal .2: Desconexão Constante", 
             Duration = 5 
         })
 
