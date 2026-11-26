@@ -2450,7 +2450,8 @@ local Variation = Vers:Section({
 })
 
 local BruteMode
-local loopBolas = false
+local BruteResistance = false
+
 Variation:Button({
    Title = "Brutal Version (Brute PromptR)",
    Desc = "Para caso for fazer uma 'batalha de exploiters' para deixar o PromptR mais agressivo e Ignorante",
@@ -2469,18 +2470,20 @@ Variation:Button({
       end
 game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = true
 
-if not loopBolas then
-task.spawn(function()
-    while loopBolas do
-        local pasta = workspace:FindFirstChild("WorkspaceCom") and workspace.WorkspaceCom:FindFirstChild("001_SoccerBalls")
-        if pasta then
-            for _, v in ipairs(pasta:GetDescendants()) do
-                if v:IsA("BasePart") then v.CanCollide = false end
+if not BruteResistance then
+    BruteResistance = true
+    task.spawn(function()
+        while BruteResistance do
+            local pasta = workspace:FindFirstChild("WorkspaceCom") and workspace.WorkspaceCom:FindFirstChild("001_SoccerBalls")
+            if pasta then
+                for _, v in ipairs(pasta:GetDescendants()) do
+                    if v:IsA("BasePart") then v.CanCollide = false end
+                end
             end
+            task.wait(0.2)
         end
-        task.wait(0.2)
-    end
-end)
+    end)
+end
    end
 })
 
@@ -2498,14 +2501,14 @@ Variation:Button({
       end
 game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 
-loopBolas = false
+BruteResistance = false
 local pasta = workspace:FindFirstChild("WorkspaceCom") and workspace.WorkspaceCom:FindFirstChild("001_SoccerBalls")
 if pasta then
     for _, v in ipairs(pasta:GetDescendants()) do
         if v:IsA("BasePart") then v.CanCollide = true end
     end
 end
-   end
+end
 })
 game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = false
 return true
