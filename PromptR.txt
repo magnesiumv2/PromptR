@@ -217,7 +217,7 @@ MainTab:Button({
                 
                 if trafficCones then
                     WindUI:Notify({
-                        Title = "Acionad: :punish", 
+                        Title = "Acionado: :punish", 
                         Content = "Teleportando props. Se o alvo " .. targetPlayer.Name .. " sentar, a cadeira irá para o limbo.", 
                         Duration = 3
                     })
