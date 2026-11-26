@@ -398,6 +398,87 @@ MainTab:Button({
     end
 })
 
+MainTab:Button({
+    Title = ":fling",
+    Desc = "Spawn",
+    Callback = function()
+        if not AlvoSelecionado or AlvoSelecionado == "" then return end
+
+        local Players = game:GetService("Players")
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local LocalPlayer = Players.LocalPlayer
+
+        -- Busca o jogador usando o nome já tratado pela sua InputAlvos
+        local targetPlayer = Players:FindFirstChild(AlvoSelecionado)
+        if not targetPlayer then
+            local busca = string.lower(AlvoSelecionado)
+            for _, player in ipairs(Players:GetPlayers()) do
+                if player ~= LocalPlayer and (string.find(string.lower(player.Name), busca) or string.find(string.lower(player.DisplayName), busca)) then
+                    targetPlayer = player
+                    break
+                end
+            end
+        end
+
+        if not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            return
+        end
+
+        -- 1. Pega o item SoccerBall pelo Remote
+        local args = {
+            "PickingTools",
+            "SoccerBall"
+        }
+        ReplicatedStorage:WaitForChild("RE"):WaitForChild("1Too1l"):InvokeServer(unpack(args))
+        task.wait(0.3)
+
+        -- 2. Equipa e ativa para spawnar a bola na pasta 001_SoccerBalls
+        local tool = LocalPlayer.Backpack:FindFirstChild("SoccerBall") or (LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("SoccerBall"))
+        if tool and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+            LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(tool)
+            task.wait(0.1)
+            tool:Activate()
+            task.wait(0.2)
+        end
+
+        -- 3. Localiza a bola pelo caminho exato
+        local workspaceCom = workspace:FindFirstChild("WorkspaceCom") or workspace:FindFirstChild("workspacecom")
+        local pastaBolas = workspaceCom and workspaceCom:FindFirstChild("001_SoccerBalls")
+        local objetoBola = pastaBolas and pastaBolas:FindFirstChild(LocalPlayer.Name)
+
+        if not objetoBola then return end
+
+        local bolaPart = objetoBola:IsA("BasePart") and objetoBola or objetoBola:FindFirstChildWhichIsA("BasePart", true)
+        if not bolaPart then return end
+
+        -- 4. Aplica a rotação extrema (BodyAngularVelocity)
+        bolaPart.CanCollide = true
+        local angular = Instance.new("BodyAngularVelocity")
+        angular.Name = "FlingSpin"
+        angular.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+        angular.P = math.huge
+        angular.AngularVelocity = Vector3.new(99999, 99999, 99999)
+        angular.Parent = bolaPart
+
+        local bodyVel = Instance.new("BodyVelocity")
+        bodyVel.Name = "FlingZeroGrav"
+        bodyVel.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+        bodyVel.Velocity = Vector3.new(0, 0, 0)
+        bodyVel.Parent = bolaPart
+
+        -- 5. Teleporta a bola continuamente contra o alvo por 3 segundos
+        task.spawn(function()
+            local tempoFim = tick() + 3
+            while tick() < tempoFim and bolaPart and bolaPart.Parent and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") do
+                bolaPart.CFrame = targetPlayer.Character.HumanoidRootPart.CFrame
+                task.wait()
+            end
+            if angular then angular:Destroy() end
+            if bodyVel then bodyVel:Destroy() end
+        end)
+    end
+})
+
 -- ============================================================
 -- 5. BOTÃO: ;kill (Versão Corrigida para Item Equipado)
 -- ============================================================
