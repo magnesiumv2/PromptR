@@ -2450,7 +2450,7 @@ local Variation = Vers:Section({
 })
 
 local BruteMode
-
+local loopBolas = false
 Variation:Button({
    Title = "Brutal Version (Brute PromptR)",
    Desc = "Para caso for fazer uma 'batalha de exploiters' para deixar o PromptR mais agressivo e Ignorante",
@@ -2469,7 +2469,7 @@ Variation:Button({
       end
 game:GetService("CoreGui"):FindFirstChild("WindUI", true).Window.Frame.Main.Frame.ScrollingFrame.Frame:GetChildren()[5].Visible = true
 
-local loopBolas = true
+if not loopBolas then
 task.spawn(function()
     while loopBolas do
         local pasta = workspace:FindFirstChild("WorkspaceCom") and workspace.WorkspaceCom:FindFirstChild("001_SoccerBalls")
